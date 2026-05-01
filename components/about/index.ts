@@ -1,0 +1,5 @@
+export { AboutHeroSection } from './hero-section'
+export { HeritageSection } from './heritage-section'
+export { FeatureCardsSection } from './feature-cards-section'
+export { DisciplinesSection } from './disciplines-section'
+export { FeaturesGridSection } from './features-grid-section'

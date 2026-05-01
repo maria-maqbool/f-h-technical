@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { SiteFooter, SiteHeader } from "@/components/layout";
+import { TopBar } from "@/components/layout/top-bar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,9 +58,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <TopBar />
+          <SiteHeader />
           <div className="min-h-screen flex flex-col">
-            <SiteHeader />
-            {children}
+            <main className="flex-1">{children}</main>
             <SiteFooter />
           </div>
         </ThemeProvider>

@@ -7,11 +7,11 @@ import {
   CTASection,
 } from '@/components/home'
 
-export default function HomePage() {
+export default function Home() {
  return (
     // <div className="min-h-screen flex flex-col">
     //   <SiteHeader />
-      <main className="flex-1 pt-16">
+      <main className="flex-1">
         <HeroSection />
         <MethodologySection />
         <ProjectsSection />
@@ -21,4 +21,4 @@ export default function HomePage() {
     //   <SiteFooter />
     // </div>
   )
-}
+} 

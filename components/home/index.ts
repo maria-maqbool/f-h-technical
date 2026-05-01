@@ -1,0 +1,5 @@
+export { HeroSection } from './hero-section'
+export { MethodologySection } from './methodology-section'
+export { ProjectsSection } from './projects-section'
+export { TestimonialsSection } from './testimonials-section'
+export { CTASection } from './cta-section'

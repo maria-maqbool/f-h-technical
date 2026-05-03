@@ -56,7 +56,7 @@ export function SiteHeader() {
                 "relative text-xs tracking-[0.15em] font-medium transition-colors duration-200 py-1",
                 isActive(item.href)
                   ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground",
+                  : "text-tertiary hover:text-primary",
               )}
             >
               {item.name}
@@ -72,7 +72,7 @@ export function SiteHeader() {
           {/* <ThemeToggle /> */}
           <Link
             href="/login"
-            className="text-xs tracking-[0.15em] font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="text-xs tracking-[0.15em] font-medium text-tertiary hover:text-primary transition-colors"
           >
             LOGIN
           </Link>
@@ -102,7 +102,7 @@ export function SiteHeader() {
           {/* <ThemeToggle /> */}
           <button
             type="button"
-            className="text-foreground"
+            className="text-tertiary hover:text-primary"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Open main menu</span>
@@ -127,7 +127,7 @@ export function SiteHeader() {
                   "block py-3 text-sm tracking-[0.15em] font-medium transition-colors",
                   isActive(item.href)
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground/80",
+                    : "text-tertiary hover:text-primary",
                 )}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -137,14 +137,14 @@ export function SiteHeader() {
             <div className="border-t border-border pt-4 mt-4 space-y-3">
               <Link
                 href="/login"
-                className="block py-2 text-sm tracking-[0.15em] font-medium text-muted-foreground hover:text-foreground"
+                className="block py-2 text-sm tracking-[0.15em] font-medium text-tertiary hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 LOGIN
               </Link>
               <Link
                 href="/signup"
-                className="block py-2 text-sm tracking-[0.15em] font-medium text-muted-foreground hover:text-foreground"
+                className="block py-2 text-sm tracking-[0.15em] font-medium text-tertiary hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 SIGN UP

@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail, Phone, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Mail, Phone, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
+import { RiTiktokLine } from "react-icons/ri";
+
 
 export function TopBar() {
   return (
@@ -12,14 +14,14 @@ export function TopBar() {
           <div className="flex items-center gap-6">
             <a
               href="mailto:fhinterior7@gmail.com"
-              className="flex items-center gap-2 text-xs hover:text-muted-foreground text-primary transition-colors"
+              className="flex items-center gap-2 text-xs text-tertiary hover:text-primary transition-colors"
             >
               <Mail className="h-4 w-4" />
               <span className="hidden sm:inline">fhinterior7@gmail.com</span>
             </a>
             <a
               href="tel:+971 56 530 2726"
-              className="flex items-center gap-2 text-xs hover:text-muted-foreground text-primary transition-colors"
+              className="flex items-center gap-2 text-xs text-tertiary hover:text-primary transition-colors"
             >
               <Phone className="h-4 w-4" />
               <span className="hidden sm:inline">+971 56 530 2726</span>
@@ -32,7 +34,7 @@ export function TopBar() {
               href="https://www.facebook.com/share/1CcXVg86bn/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-muted-foreground text-primary transition-colors"
+              className="text-tertiary hover:text-primary transition-colors"
               aria-label="Facebook"
             >
               <Facebook className="h-4 w-4" />
@@ -41,28 +43,28 @@ export function TopBar() {
               href="https://www.instagram.com/fhtech_uae?igsh=MWJpcXpjbTFwM2xuNw%3D%3D&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-muted-foreground text-primary transition-colors"
+              className="text-tertiary hover:text-primary transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="h-4 w-4" />
             </Link>
-            {/* <Link
-              href="https://linkedin.com"
+            <Link
+              href="https://www.youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-muted-foreground text-primary transition-colors"
-              aria-label="LinkedIn"
+              className="text-tertiary hover:text-primary transition-colors"
+              aria-label="Youtube"
             >
-              <TikTok_Sans className="h-4 w-4" />
-            </Link> */}
+              <Youtube className="h-4 w-4" />
+            </Link>
             <Link
               href="https://www.tiktok.com/@fhtech_uae?_r=1&_t=ZS-95zywmGGfQa"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-muted-foreground text-primary transition-colors"
-              aria-label="LinkedIn"
+              className="text-tertiary hover:text-primary transition-colors"
+              aria-label="Tiktok"
             >
-              <Linkedin className="h-4 w-4" />
+              <RiTiktokLine />
             </Link>
           </div>
         </div>

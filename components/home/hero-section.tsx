@@ -33,13 +33,25 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight mb-8"
+          className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight mb-2"
         >
           Transforming Spaces into
           <br />
           Luxury Living
         </motion.h1>
 
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-sm tracking-wide  text-tertiary mb-12 font-semibold"
+        >
+        From bespoke renovations to expert HVAC maintenance,
+        <br />
+        <span className="text-primary">FH Technical Services Co. L.L.C </span>delivers excellence
+        <br />
+        for villas, offices, and commercial spaces.
+        </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,14 +62,15 @@ export function HeroSection() {
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none px-8 py-6 text-xs tracking-[0.15em]"
           >
-            <Link href="/portfolio">VIEW PORTFOLIO</Link>
+            <Link href="/contact">GET FREE CONSULTATION</Link>
           </Button>
           <Button
             asChild
             variant="outline"
-            className="border-foreground/30 text-foreground hover:bg-foreground/10 rounded-none px-8 py-6 text-xs tracking-[0.15em]"
+            className="border-solid-[1px] border-primary hover:text-tertiary text-primary bg-foreground hover:bg-foreground/10 rounded-none px-8 py-6 text-xs tracking-[0.15em]"
           >
-            <Link href="/services">OUR SERVICES</Link>
+            {/* <Link href="/services">OUR SERVICES</Link> */}
+            <Link href="/portfolio">VIEW PORTFOLIO</Link>
           </Button>
         </motion.div>
       </div>

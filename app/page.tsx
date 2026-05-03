@@ -6,6 +6,8 @@ import {
   TestimonialsSection,
   CTASection,
 } from '@/components/home'
+import { AboutSection } from '@/components/home/about-section'
+import { ServicesSection } from '@/components/home/services-section'
 
 export default function Home() {
  return (
@@ -14,6 +16,8 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <MethodologySection />
+        <AboutSection />
+        <ServicesSection />
         <ProjectsSection />
         <TestimonialsSection />
         <CTASection />

@@ -60,7 +60,7 @@ export function MethodologySection() {
                 <span className="text-sm text-primary font-light">{step.number}</span>
                 <div className="w-12 h-px bg-border mt-4 group-hover:w-20 group-hover:bg-primary transition-all duration-300" />
               </div>
-              <h3 className="text-lg font-medium text-foreground mb-3">{step.title}</h3>
+              <h3 className="text-lg font-medium mb-3 text-tertiary hover:text-primary">{step.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
             </motion.div>
           ))}

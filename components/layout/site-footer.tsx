@@ -104,7 +104,7 @@ export function SiteFooter() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-xs tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors uppercase"
+                  className="text-xs tracking-[0.1em] text-muted-foreground hover:text-tertiary transition-colors uppercase"
                 >
                   {link.name}
                 </Link>
@@ -123,7 +123,7 @@ export function SiteFooter() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-xs tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors uppercase"
+                  className="text-xs tracking-[0.1em] text-muted-foreground hover:text-tertiary transition-colors uppercase"
                 >
                   {link.name}
                 </Link>
@@ -141,10 +141,10 @@ export function SiteFooter() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-xs tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors uppercase"
+                  className="text-xs tracking-[0.1em] text-muted-foreground hover:text-primary transition-colors"
                 >
                   <div className="flex items-center gap-2">
-                  {link.icon && <span className="mr-2 text-tertiary text-lg">{link.icon}</span>}
+                  {link.icon && <span className="mr-2 text-tertiary hover:text-primary transition-colors text-lg">{link.icon}</span>}
                   {link.name}
                   </div>
                    

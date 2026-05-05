@@ -1,9 +1,5 @@
 import Link from 'next/link'
-import { Mail, Phone, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
-import { RiTiktokLine } from 'react-icons/ri'
-import { FaLocationDot } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
-import { IoCall } from "react-icons/io5";
+import { Mail, Phone, Facebook, Instagram, Linkedin, Youtube, MapPin } from 'lucide-react'
 
 
 
@@ -29,10 +25,10 @@ const legalLinks = [
 ]
 
 const contactInfo = [
-  { icon: <FaLocationDot />, name: 'Saif Al-Rumhib Building, Deira Dubai', href: '#' },
-  { icon: <IoMdMail />, name: 'fhinterior7@gmail.com', href: 'mailto:fhinterior7@gmail.com' },
-  { icon: <IoCall />, name: '+971 56 530 2726', href: 'tel:+971 56 530 2726' },
-  { icon: <IoCall />, name: '+971 52 151 6301', href: 'tel:+971 521516301' },
+  { icon: <MapPin />, name: 'Saif Al-Rumhib Building, Deira Dubai', href: '#' },
+  { icon: <Mail />, name: 'fhinterior7@gmail.com', href: 'mailto:fhinterior7@gmail.com' },
+  { icon: <Phone />, name: '+971 56 530 2726', href: 'tel:+971 56 530 2726' },
+  { icon: <Phone />, name: '+971 52 151 6301', href: 'tel:+971 521516301' },
   // { name: 'PRIVACY', href: '/privacy' },
 ]
 
@@ -89,7 +85,7 @@ export function SiteFooter() {
               className="text-tertiary hover:text-primary transition-colors"
               aria-label="Tiktok"
             >
-              <RiTiktokLine />
+              <Linkedin />
             </Link>
             </div>
           </div>

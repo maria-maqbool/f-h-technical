@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { Mail, Phone, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
-import { RiTiktokLine } from "react-icons/ri";
 
 
 export function TopBar() {
@@ -64,7 +63,7 @@ export function TopBar() {
               className="text-tertiary hover:text-primary transition-colors"
               aria-label="Tiktok"
             >
-              <RiTiktokLine />
+              <Linkedin />
             </Link>
           </div>
         </div>

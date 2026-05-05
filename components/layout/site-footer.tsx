@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { Mail, Phone, Facebook, Instagram, Linkedin, Youtube, MapPin } from 'lucide-react'
+import Image from 'next/image'
+
 
 
 
@@ -39,7 +41,14 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo and copyright */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="text-lg font-serif text-primary tracking-wide">
+            <Link href="/" className="text-lg font-serif text-primary tracking-wide flex items-center gap-2">
+            <Image
+              src="./logo.png"
+              alt="FH Technical Services Logo"
+              width={50}
+              height={50}
+              className="object-contain"
+            />
               FH Technical Services
             </Link>
             <p className="text-xs tracking-[0.1em] text-muted-foreground uppercase">
@@ -85,7 +94,9 @@ export function SiteFooter() {
               className="text-tertiary hover:text-primary transition-colors"
               aria-label="Tiktok"
             >
-              <Linkedin />
+              <Linkedin className="h-4 w-4" />
+
+              {/* <Image src="/tiktok.svg" alt="Tiktok" width={50} height={50} color='white' />  */}
             </Link>
             </div>
           </div>
@@ -140,7 +151,7 @@ export function SiteFooter() {
                   className="text-xs tracking-[0.1em] text-muted-foreground hover:text-primary transition-colors"
                 >
                   <div className="flex items-center gap-2">
-                  {link.icon && <span className="mr-2 text-tertiary hover:text-primary transition-colors text-lg">{link.icon}</span>}
+                  {link.icon && <span className="mr-2 text-tertiary hover:text-primary transition-colors text-sm">{link.icon}</span>}
                   {link.name}
                   </div>
                    

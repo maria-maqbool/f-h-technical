@@ -30,19 +30,14 @@ export function SiteHeader() {
     <header className="sticky lg:px-0 px-6 top-0 left-0 right-0 z-50 shadow-lg border-b border-border/80 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-4">
         {/* Logo */}
-        {/* <Link href="/" className="flex-shrink-0">
-          <span className="text-lg font-serif text-primary tracking-wide">
-            FH Technical Services
-          </span>
-        </Link> */}
 
         <Link href="/" className="flex-shrink-0 flex items-center">
             <Image
-              src="./logo.jpeg"
+              src="./logo.png"
               alt="FH Technical Services Logo"
-              width={50}
+              width={70}
               height={50}
-              className="object-contain rounded-full shadow-sm shadow-yellow-50"
+              className="object-contain"
             />
         </Link>
 

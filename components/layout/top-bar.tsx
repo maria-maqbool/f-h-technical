@@ -13,16 +13,16 @@ export function TopBar() {
           <div className="flex items-center gap-6">
             <a
               href="mailto:fhinterior7@gmail.com"
-              className="flex items-center gap-2 text-xs text-tertiary hover:text-primary transition-colors"
+              className="flex items-center gap-1 text-xs text-tertiary hover:text-primary transition-colors"
             >
-              <Mail className="h-4 w-4" />
+              <Mail className="h-4" />
               <span className="hidden sm:inline">fhinterior7@gmail.com</span>
             </a>
             <a
               href="tel:+971 56 530 2726"
-              className="flex items-center gap-2 text-xs text-tertiary hover:text-primary transition-colors"
+              className="flex items-center gap-1 text-xs text-tertiary hover:text-primary transition-colors"
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-4" />
               <span className="hidden sm:inline">+971 56 530 2726</span>
             </a>
           </div>
@@ -63,7 +63,7 @@ export function TopBar() {
               className="text-tertiary hover:text-primary transition-colors"
               aria-label="Tiktok"
             >
-              <Linkedin />
+              <Linkedin className="h-4 w-4" />
             </Link>
           </div>
         </div>

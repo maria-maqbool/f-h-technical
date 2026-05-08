@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export function CTASection() {
   return (
@@ -33,7 +34,8 @@ export function CTASection() {
               type="submit"
               className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none px-6 py-3 text-xs tracking-[0.15em] whitespace-nowrap"
             >
-              START A CONVERSATION
+              
+              <Link href="/contact">START A CONVERSATION</Link>
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </form>

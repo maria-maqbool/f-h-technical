@@ -11,10 +11,10 @@ import Image from "next/image";
 
 const navigation = [
   { name: "HOME", href: "/" },
+  { name: "ABOUT", href: "/about" },
   { name: "SERVICES", href: "/services" },
   { name: "PORTFOLIO", href: "/portfolio" },
-  { name: "ABOUT", href: "/about" },
-  { name: "CONTACT", href: "/contact" },
+  // { name: "CONTACT", href: "/contact" },
 ];
 
 export function SiteHeader() {
@@ -65,24 +65,24 @@ export function SiteHeader() {
         {/* Right side actions */}
         <div className="hidden lg:flex lg:items-center lg:gap-x-6">
           {/* <ThemeToggle /> */}
-          <Link
+          {/* <Link
             href="/login"
             className="text-xs tracking-[0.15em] font-medium text-tertiary hover:text-primary transition-colors"
           >
             LOGIN
-          </Link>
-          <Button
+          </Link> */}
+          {/* <Button
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none px-6 py-2 text-xs tracking-[0.15em] font-medium"
           >
             <Link href="/signup">SIGN UP</Link>
-          </Button>
-          {/* <Button 
+          </Button> */}
+          <Button 
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none px-6 py-2 text-xs tracking-[0.15em] font-medium"
           >
             <Link href="/contact">GET A QUOTE</Link>
-          </Button> */}
+          </Button>
           {/* <Link
             href="/signup"
             className="text-muted-foreground hover:text-foreground transition-colors"

@@ -33,7 +33,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight mb-2"
+          className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight mb-4"
         >
           Transforming Spaces into
           <br />
@@ -44,7 +44,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-sm tracking-wide  text-tertiary mb-12 font-semibold"
+          className="text-sm   text-secondary-foreground tracking-wide mb-12 "
         >
         From bespoke renovations to expert HVAC maintenance,
         <br />

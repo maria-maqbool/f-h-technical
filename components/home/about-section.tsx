@@ -13,9 +13,10 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <p className="text-xs tracking-[0.2em] text-primary mb-4">
               WHO WE ARE
@@ -27,9 +28,9 @@ export function AboutSection() {
             </h1>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md mb-10">
              At FH TECHNICAL SERVICES CO. L.L.C, we don’t just maintain spaces—we transform them. Based in the heart of Dubai, we are a premier, fully licensed technical and interior design firm dedicated to delivering high-precision craftsmanship and reliable engineering solutions.
+             {/* <br />
              <br />
-             <br />
-             Whether it’s a high-end villa renovation, bespoke custom carpentry, or critical HVAC and electrical maintenance, we bring a "client-first" philosophy to every project. We understand the unique demands of the Dubai climate and architectural landscape, providing turnkey services that blend aesthetic beauty with technical durability.
+             Whether it’s a high-end villa renovation, bespoke custom carpentry, or critical HVAC and electrical maintenance, we bring a "client-first" philosophy to every project. We understand the unique demands of the Dubai climate and architectural landscape, providing turnkey services that blend aesthetic beauty with technical durability. */}
             </p>
             <h1 className="text-lg font-normal text-tertiary leading-tight mb-4">
               Why Trust Us?
@@ -40,26 +41,29 @@ export function AboutSection() {
                   We are a professionally registered company with the Federal Tax Authority (FTA). Our Tax Registration Number (TRN) ensures full transparency and compliance for both our residential and commercial partners.
                 </div>
               </li>
-              {/* <li className="text-muted-foreground text-xs leading-relaxed max-w-md mb-4">
+              <li className="text-muted-foreground text-xs leading-relaxed max-w-md mb-4">
                 <span className="text-xs font-semibold text-tertiary leading-tight mb-4">End-to-End Solutions: </span>
+                 <div className="pl-4">
                  Forget managing multiple contractors. From demolition to final epoxy painting and annual maintenance, we handle it all under one roof.
-              </li> */}
+                 </div>
+              </li>
             </ul>
   
-          <Button
+          {/* <Button
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none px-8 py-6 text-xs tracking-[0.15em]"
           >
             <Link href="/about">KNOW MORE</Link>
-          </Button>
+          </Button> */}
             
           </motion.div>
 
           {/* Right Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          {/* <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="relative"
           >
             <div className="relative aspect-[4/4] overflow-hidden">
@@ -67,10 +71,37 @@ export function AboutSection() {
                 src="./about.png"
                 alt="Luxury interior design with modern furniture"
                 fill
-                className="object-cover"
                 priority
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-background/80 dark:bg-background/70" />
+            </div>
+          </motion.div> */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative row-span-2 group overflow-hidden"
+          >
+            <div className="relative aspect-[4/3]">
+              <Image
+                src="./about.png"
+                alt="Luxury interior design with modern furniture"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-background/80 dark:bg-background/70" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs tracking-wider border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                >
+                  {/* VIEW ALL SERVICES */}
+                  KNOW MORE
+                </Link>
+                
+              </div>
             </div>
           </motion.div>
         </div>

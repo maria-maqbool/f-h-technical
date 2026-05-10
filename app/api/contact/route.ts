@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       to: "fhinterior7@gmail.com",
       subject: "New Contact Form Submission",
       html: `
-        <h2>New Client Inquiry</h2>
+        <h2>New Client Inquiry</h2> 
         
         <p><strong>Name:</strong> ${fullName}</p>
         <p><strong>Email:</strong> ${email}</p>

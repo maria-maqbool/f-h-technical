@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 
 
-
 const navigationLinks = [
   { name: 'SERVICES', href: '/services' },
   { name: 'PORTFOLIO', href: '/portfolio' },
@@ -79,7 +78,7 @@ export function SiteFooter() {
               <Instagram className="h-4 w-4" />
             </Link>
             <Link
-              href="https://www.youtube.com/"
+              href="https://www.youtube.com/@fhtech_uae"
               target="_blank"
               rel="noopener noreferrer"
               className="text-tertiary hover:text-primary transition-colors"

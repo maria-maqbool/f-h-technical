@@ -130,7 +130,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <div className="border-t border-border pt-4 mt-4 space-y-3">
-              <Link
+              {/* <Link
                 href="/login"
                 className="block py-2 text-sm tracking-[0.15em] font-medium text-tertiary hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
@@ -143,7 +143,7 @@ export function SiteHeader() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 SIGN UP
-              </Link>
+              </Link> */}
               <Button
                 asChild
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-none text-xs tracking-[0.15em]"

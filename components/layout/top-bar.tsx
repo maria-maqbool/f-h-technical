@@ -48,7 +48,7 @@ export function TopBar() {
               <Instagram className="h-4 w-4" />
             </Link>
             <Link
-              href="https://www.youtube.com/"
+              href="https://www.youtube.com/@fhtech_uae"
               target="_blank"
               rel="noopener noreferrer"
               className="text-tertiary hover:text-primary transition-colors"

@@ -15,7 +15,7 @@ export function ContactCTA() {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
             Ready to Elevate Your Infrastructure?
           </h2>
-          <p className="text-muted-foreground text-sm max-w-xl mx-auto mb-10">
+          <p className="text-tertiary text-sm max-w-xl mx-auto mb-10">
             Our team of certified engineers and technical specialists is ready to provide the 
             precision your high-end project deserves.
           </p>

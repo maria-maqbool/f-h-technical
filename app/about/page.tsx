@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import {
   AboutHeroSection,
+  CreativeSolutionsSection,
   HeritageSection,
   FeatureCardsSection,
   DisciplinesSection,
   FeaturesGridSection,
+  LuxuryInteriorSection,
 } from '@/components/about'
 import { CTASection } from '@/components/home'
+import { AboutMainSection } from '@/components/about/about-main-section'
 
 export const metadata: Metadata = {
   title: 'About Us | FH Technical Services',
@@ -15,8 +18,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="flex-1 pt-32 min-h-screen">
+    <main className="flex-1">
+      <AboutMainSection />
       <AboutHeroSection />
+      <LuxuryInteriorSection />
+      {/* <CreativeSolutionsSection /> */}
       <HeritageSection />
       <FeatureCardsSection />
       <DisciplinesSection />

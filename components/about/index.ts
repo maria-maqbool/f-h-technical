@@ -1,4 +1,7 @@
+export { AboutMainSection } from './about-main-section'
 export { AboutHeroSection } from './hero-section'
+export { LuxuryInteriorSection } from './stats-section'
+export { CreativeSolutionsSection } from './creative-solutions-section'
 export { HeritageSection } from './heritage-section'
 export { FeatureCardsSection } from './feature-cards-section'
 export { DisciplinesSection } from './disciplines-section'

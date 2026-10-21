@@ -63,13 +63,12 @@ export function ServicesSection() {
           >
             <div className="relative aspect-[4/4] lg:aspect-auto lg:h-full min-h-[500px]">
               <Image
-                // src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
                 src="./services.png"
                 alt="Villa renovation project"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-background/80 dark:bg-background/70" />
+              <div className="absolute inset-0 bg-background/80 dark:bg-background/65" />
               {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" /> */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h3 className="font-serif text-2xl md:text-3xl text-white mb-3">

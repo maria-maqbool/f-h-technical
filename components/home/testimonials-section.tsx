@@ -30,12 +30,32 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="font-serif text-3xl md:text-4xl font-light text-foreground">
+          {/* <h2 className="font-serif text-3xl md:text-4xl font-light text-foreground">
             Client Voices
-          </h2>
+          </h2> */}
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-xs tracking-[0.2em] text-primary mb-4 uppercase"
+          >
+            Client Voices
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-serif text-3xl md:text-4xl font-light text-foreground leading-tight"
+          >
+            Here's what our satisfied clients are saying
+          </motion.h1>
         </motion.div>
+
+        
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

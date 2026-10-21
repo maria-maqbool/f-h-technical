@@ -4,19 +4,21 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { Check } from 'lucide-react'
 
 
 export function AboutSection() {
   return (
-    <section className="relative min-h-[70vh] px-6 bg-surface-elevated/60 py-8">
+    <section className="relative min-h-[70vh] px-6 bg-surface-elevated/60 py-6">
       <div className="mx-auto max-w-7xl mx-auto py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className='mr-14'
           >
             <p className="text-xs tracking-[0.2em] text-primary mb-4">
               WHO WE ARE
@@ -32,7 +34,7 @@ export function AboutSection() {
              <br />
              Whether it’s a high-end villa renovation, bespoke custom carpentry, or critical HVAC and electrical maintenance, we bring a "client-first" philosophy to every project. We understand the unique demands of the Dubai climate and architectural landscape, providing turnkey services that blend aesthetic beauty with technical durability. */}
             </p>
-            <h1 className="text-lg font-normal text-tertiary leading-tight mb-4">
+            {/* <h1 className="text-lg font-normal text-tertiary leading-tight mb-4">
               Why Trust Us?
             </h1>
             <ul className="list-disc list-inside">
@@ -47,7 +49,35 @@ export function AboutSection() {
                  Forget managing multiple contractors. From demolition to final epoxy painting and annual maintenance, we handle it all under one roof.
                  </div>
               </li>
-            </ul>
+            </ul> */}
+
+            <div className='border-t py-4 flex items-center justify-between mt-14'>
+              <div className='flex items-center w-48 gap-4'>
+                <div className='text-primary'>
+                <Check size={40} strokeWidth={3} />
+                </div>
+                <div className='text-tertiary'>
+                  Ontime at services
+                </div>
+              </div>
+              <div className='flex items-center w-48 gap-4'>
+                <div className='text-primary'>
+                <Check size={40} strokeWidth={3} />
+                </div>
+                <div className='text-tertiary'>
+                  24/7 hours services
+                </div>
+              </div>
+              <div className='flex items-center w-48 gap-4'>
+                <div className='text-primary'>
+                <Check size={40} strokeWidth={3} />
+                </div>
+                <div className='text-tertiary'>
+                 Verified professionals
+                </div>
+              </div>
+              
+            </div>
   
           {/* <Button
             asChild
@@ -91,7 +121,8 @@ export function AboutSection() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-background/80 dark:bg-background/70" />
+              {/* <div className="absolute inset-0 bg-background/80 dark:bg-background/30" /> */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <Link
                   href="/about"

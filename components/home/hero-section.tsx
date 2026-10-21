@@ -15,7 +15,7 @@ export function HeroSection() {
           backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop')`,
         }}
       >
-        <div className="absolute inset-0 bg-background/80 dark:bg-background/70" />
+        <div className="absolute inset-0 bg-background/80 dark:bg-background/65" />
       </div>
 
       {/* Content */}
@@ -44,7 +44,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-sm   text-secondary-foreground tracking-wide mb-12 "
+          className="text-sm text-secondary-foreground tracking-wide mb-12"
         >
         From bespoke renovations to expert HVAC maintenance,
         <br />

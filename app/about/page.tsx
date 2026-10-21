@@ -23,8 +23,8 @@ export default function AboutPage() {
       <AboutHeroSection />
       <LuxuryInteriorSection />
       {/* <CreativeSolutionsSection /> */}
-      <HeritageSection />
-      <FeatureCardsSection />
+      {/* <HeritageSection /> */}
+      {/* <FeatureCardsSection /> */}
       <DisciplinesSection />
       <FeaturesGridSection />
       <CTASection />

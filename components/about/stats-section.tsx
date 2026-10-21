@@ -26,28 +26,52 @@ const stats = [
 
 const teamMembers = [
   {
-    name: "John Portman",
-    role: "Designer",
+    name: "Ali Raza",
+    role: "Site Incharge",
     image:
-      "./member1.jpg",
+      "./aliRaza.jpeg",
   },
   {
-    name: "Alison Clutcher",
-    role: "Photographer",
+    name: "Kashif Shehzad",
+    role: "Site supervisor",
     image:
-      "./member5.jpg",
+      "./kashif.jpeg",
   },
   {
-    name: "Russell Otten",
-    role: "Operations Manager",
+    name: "Umar Gill",
+    role: "Site coordinator",
     image:
-      "./member2.jpg",
+      "./umar.jpeg",
   },
   {
-    name: "Julie Crawford",
-    role: "Architect",
+    name: "Ali hassan",
+    role: "Team leader",
     image:
-      "./member4.jpg",
+      "./aliHassan.jpeg",
+  },
+  {
+    name: "Kaleem",
+    role: "Site execution team",
+    image:
+      "./kaleem.jpeg",
+  },
+  {
+    name: "Anwar ul haq ",
+    role: "Team leader",
+    image:
+      "./anwar.jpeg",
+  },
+  {
+    name: "Azhar",
+    role: "Elecrical & Machenical Engineer",
+    image:
+      "./azhar.jpeg",
+  },
+  {
+    name: "Ghulam Ali",
+    role: "Site team",
+    image:
+      "./ghulam.jpeg",
   },
 ];
 

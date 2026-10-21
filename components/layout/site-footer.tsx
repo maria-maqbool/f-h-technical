@@ -40,13 +40,13 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo and copyright */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="text-lg font-serif text-primary tracking-wide flex items-center gap-2">
+            <Link href="/" className="text-lg font-serif text-primary tracking-wide flex items-center gap-2 rounded-full">
             <Image
-              src="./logo.png"
+              src="./logo6.png"
               alt="FH Technical Services Logo"
               width={50}
               height={50}
-              className="object-contain"
+              className="object-contain rounded-full"
             />
               FH Technical Services
             </Link>

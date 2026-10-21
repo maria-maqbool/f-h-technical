@@ -15,7 +15,7 @@ export function HeroSection() {
           backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop')`,
         }}
       >
-        <div className="absolute inset-0 bg-background/80 dark:bg-background/65" />
+        <div className="absolute inset-0 bg-background/50 dark:bg-background/65" />
       </div>
 
       {/* Content */}
@@ -33,14 +33,14 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight mb-4"
+          className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-12"
         >
           Transforming Spaces into
           <br />
           Luxury Living
         </motion.h1>
 
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -51,7 +51,7 @@ export function HeroSection() {
         <span className="text-primary">FH Technical Services Co. L.L.C </span>delivers excellence
         <br />
         for villas, offices, and commercial spaces.
-        </motion.p>
+        </motion.p> */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

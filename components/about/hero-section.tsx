@@ -50,7 +50,7 @@ export function AboutHeroSection() {
             <p className="mb-4 text-xs tracking-[0.2em] text-primary uppercase">
               Excellence in Engineering
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight text-foreground mb-6 text-balance">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight text-foreground mb-6 text-balance font-bold">
               The Art of Precision Engineering
             </h1>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md">

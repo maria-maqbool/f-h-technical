@@ -1,21 +1,51 @@
+
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export async function POST(req: Request) {
+export async function POST(request: Request) {
   try {
-    const body = await req.json()
+    const body = await request.json()
 
-    const { fullName, email, serviceType, location, projectBrief } = body
+    const {
+      fullName,
+      email,
+      serviceType,
+      location,
+      projectBrief,
+    } = body
 
-    const data = await resend.emails.send({
-      from: "fhtechnicalservice.com",
-    //   to: "mariamaqbool35@gmail.com",
-      to: "fhinterior7@gmail.com",
-      subject: "New Contact Form Submission",
+    // Validate required fields on the server.
+    if (
+      !fullName?.trim() ||
+      !email?.trim() ||
+      !serviceType?.trim() ||
+      !location?.trim() ||
+      !projectBrief?.trim()
+    ) {
+      return NextResponse.json(
+        { error: "Please complete all required fields." },
+        { status: 400 }
+      )
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (!emailPattern.test(email)) {
+      return NextResponse.json(
+        { error: "Please provide a valid email address." },
+        { status: 400 }
+      )
+    }
+
+    const { error } = await resend.emails.send({
+      from: "FH Project Inquiry <onboarding@resend.dev>",
+      to: [process.env.CONTACT_EMAIL!],
+      replyTo: email,
+      subject: `New Project Inquiry - ${fullName}`,
       html: `
-        <h2>New Client Inquiry</h2> 
+        <h2>Client Inquiry</h2> 
         
         <p><strong>Name:</strong> ${fullName}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -26,10 +56,24 @@ export async function POST(req: Request) {
       `,
     })
 
-    return NextResponse.json(data)
-  } catch (error) {
+    if (error) {
+      console.error("Resend error:", error)
+
+      return NextResponse.json(
+        { error: "Unable to send your inquiry right now." },
+        { status: 500 }
+      )
+    }
+
     return NextResponse.json(
-      { error: "Something went wrong" },
+      { success: true, message: "Inquiry submitted successfully." },
+      { status: 200 }
+    )
+  } catch (error) {
+    console.error("Contact API error:", error)
+
+    return NextResponse.json(
+      { error: "An unexpected error occurred." },
       { status: 500 }
     )
   }

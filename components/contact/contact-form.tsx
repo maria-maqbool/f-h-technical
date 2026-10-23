@@ -1,69 +1,61 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { ArrowRight, MapPin, Phone, Mail, MessageSquare } from "lucide-react"
+import { FormEvent, useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, MapPin, Phone, Mail, MessageSquare } from "lucide-react";
+
+const initialFormData = {
+  fullName: "",
+  email: "",
+  serviceType: "",
+  location: "",
+  projectBrief: "",
+};
 
 export function ContactForm() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    serviceType: "",
-    location: "",
-    projectBrief: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault()
-  //   setIsSubmitting(true)
-  //   // Simulate form submission
-  //   await new Promise((resolve) => setTimeout(resolve, 1000))
-  //   setIsSubmitting(false)
-  //   alert("Thank you for your inquiry. We will get back to you shortly.")
-  //   setFormData({
-  //     fullName: "",
-  //     email: "",
-  //     serviceType: "",
-  //     location: "",
-  //     projectBrief: "",
-  //   })
-  // }
+  const [formData, setFormData] = useState(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
 
 
-  const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
 
-  setIsSubmitting(true)
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    setIsSubmitting(true);
+    setMessage("");
+    setIsSuccess(false);
 
-    if (response.ok) {
-      alert("Thank you for your inquiry.")
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      setFormData({
-        fullName: "",
-        email: "",
-        serviceType: "",
-        location: "",
-        projectBrief: "",
-      })
-    } else {
-      alert("Failed to send message.")
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send your inquiry.");
+      }
+
+      setIsSuccess(true);
+      setMessage("Thank you! Your inquiry has been submitted.");
+      setFormData(initialFormData);
+    } catch (error) {
+      setIsSuccess(false);
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    alert("Something went wrong.")
-  }
-
-  setIsSubmitting(false)
-}
+  };
 
   return (
     <section className="bg-background pb-16 px-6 lg:px-16">
@@ -77,9 +69,21 @@ export function ContactForm() {
             transition={{ duration: 0.6 }}
             className="bg-[#121212] border border-[#1D1D1D] p-8 lg:p-10"
           >
-            <h2 className="font-serif text-2xl text-white mb-8">Project Inquiry</h2>
-            
+            <h2 className="font-serif text-2xl text-white mb-8">
+              Project Inquiry
+            </h2>
+
             <form onSubmit={handleSubmit} className="space-y-6">
+              {message && (
+                <p
+                  role="status"
+                  aria-live="polite"
+                  className={isSuccess ? "text-green-400" : "text-red-400"}
+                >
+                  {message}
+                </p>
+              )}
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
@@ -89,7 +93,9 @@ export function ContactForm() {
                     type="text"
                     placeholder="Your Name"
                     value={formData.fullName}
-                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, fullName: e.target.value })
+                    }
                     className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     required
                   />
@@ -102,7 +108,9 @@ export function ContactForm() {
                     type="email"
                     placeholder="name@company.com"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     required
                   />
@@ -116,13 +124,24 @@ export function ContactForm() {
                   </label>
                   <select
                     value={formData.serviceType}
-                    onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        serviceType: e.target.value,
+                      })
+                    }
                     required
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground focus:outline-none focus:border-primary"
                   >
-                    <option value="" disabled>Interior Technical Services</option>
-                    <option value="interior">Interior Technical Services</option>
-                    <option value="renovation">Renovation & Construction</option>
+                    <option value="" disabled>
+                      Select a service
+                    </option>
+                    <option value="interior">
+                      Interior Technical Services
+                    </option>
+                    <option value="renovation">
+                      Renovation & Construction
+                    </option>
                     <option value="maintenance">Technical Maintenance</option>
                     <option value="consultancy">Engineering Consultancy</option>
                   </select>
@@ -135,7 +154,9 @@ export function ContactForm() {
                     type="text"
                     placeholder="Dubai / Abu Dhabi"
                     value={formData.location}
-                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, location: e.target.value })
+                    }
                     className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     required
                   />
@@ -149,7 +170,9 @@ export function ContactForm() {
                 <textarea
                   placeholder="Describe your technical requirements..."
                   value={formData.projectBrief}
-                  onChange={(e) => setFormData({ ...formData, projectBrief: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, projectBrief: e.target.value })
+                  }
                   rows={4}
                   className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors resize-none"
                   required
@@ -159,7 +182,7 @@ export function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-3 bg-[#C5A059] text-primary-foreground px-8 py-4 text-xs tracking-[0.15em] uppercase hover:bg-primary/90 transition-colors disabled:opacity-50"
+                className="inline-flex items-center gap-3 bg-[#C5A059] text-black px-8 py-4 text-xs tracking-[0.15em] uppercase hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Submitting..." : "Submit Request"}
                 <ArrowRight className="w-4 h-4" />
@@ -176,8 +199,10 @@ export function ContactForm() {
             className="flex flex-col gap-4"
           >
             <div className="bg-[#1B1917] border border-[#211F1D] p-8 lg:p-10 flex-1 relative">
-              <h2 className="font-serif text-2xl text-primary mb-8">Regional HQ</h2>
-              
+              <h2 className="font-serif text-2xl text-primary mb-8">
+                Regional HQ
+              </h2>
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -186,7 +211,8 @@ export function ContactForm() {
                       Dubai Office
                     </p>
                     <p className="text-muted-foreground text-sm">
-                      Saif Al-Rumhib Building, Deira<br />
+                      Saif Al-Rumhib Building, Deira
+                      <br />
                       Dubai, United Arab Emirates
                     </p>
                   </div>
@@ -198,7 +224,9 @@ export function ContactForm() {
                     <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
                       Direct Line
                     </p>
-                    <p className="text-muted-foreground text-sm">+971 56 530 2726</p>
+                    <p className="text-muted-foreground text-sm">
+                      +971 56 530 2726
+                    </p>
                   </div>
                 </div>
 
@@ -208,7 +236,9 @@ export function ContactForm() {
                     <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
                       Enquiries
                     </p>
-                    <p className="text-muted-foreground text-sm font-medium">fhinterior7@gmail.com</p>
+                    <p className="text-muted-foreground text-sm font-medium">
+                      fhinterior7@gmail.com
+                    </p>
                   </div>
                 </div>
               </div>
@@ -221,8 +251,12 @@ export function ContactForm() {
             {/* WhatsApp Support Bar */}
             <div className="bg-[#C5A059] p-6 flex items-center justify-between">
               <div>
-                <p className="text-primary-foreground font-medium">WhatsApp Support</p>
-                <p className="text-primary-foreground/70 text-sm">Instant technical consultation.</p>
+                <p className="text-primary-foreground font-medium">
+                  WhatsApp Support
+                </p>
+                <p className="text-primary-foreground/70 text-sm">
+                  Instant technical consultation.
+                </p>
               </div>
               <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 text-primary" />
@@ -232,5 +266,5 @@ export function ContactForm() {
         </div>
       </div>
     </section>
-  )
+  );
 }

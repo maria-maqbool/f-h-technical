@@ -7,10 +7,70 @@ import { ArrowRight, MapPin, Phone, Mail, MessageSquare } from "lucide-react";
 const initialFormData = {
   fullName: "",
   email: "",
+  phone: "",
   serviceType: "",
-  location: "",
+  country: "",
+  city: "",
   projectBrief: "",
-};
+}
+
+
+const countryCities: Record<string, string[]> = {
+  "United Arab Emirates": [
+    "Abu Dhabi",
+    "Dubai",
+    "Sharjah",
+    "Ajman",
+    "Umm Al Quwain",
+    "Ras Al-Khaimah",
+    "Fujairah",
+  ],
+  "Saudi Arabia": [
+    "Riyadh",
+    "Jeddah",
+    "Mecca",
+    "Medina",
+    "Dammam",
+    "Tabuk",
+    "Buraydah",
+    "Ta'if",
+    "Najran",
+  ],
+  "Qatar": [
+    "Doha",
+    "Al Rayyan",
+    "Lusail",
+    "Al Wakrah",
+    "Al Khor",
+    "Mesaieed",
+    "Dukhan",
+    "Madinat ash Shamal",
+  ],
+  "Oman": [
+    "Muscat",
+    "Seeb",
+    "Salalah",
+    "Sohar",
+    "Nizwa",
+    "Sur",
+    "Rustaq",
+    "Bahla",
+    "Ibri",
+    "Khasab",
+    "Duqm",
+  ],
+  "Bahrain": [
+    "Manama",
+    "Muharraq",
+    "Riffa",
+    "Hamad Town",
+    "A'ali",
+    "Isa Town",
+    "Sitra",
+    "Budaiya",
+  ],
+}
+
 
 export function ContactForm() {
   const [formData, setFormData] = useState(initialFormData);
@@ -118,6 +178,33 @@ export function ContactForm() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
+
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2"
+                  >
+                    Phone Number
+                  </label>
+
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    placeholder="+971 50 123 4567"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        phone: e.target.value,
+                      })
+                    }
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
+                    required
+                  />
+                </div>
+
                 <div>
                   <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
                     Service Type
@@ -146,20 +233,77 @@ export function ContactForm() {
                     <option value="consultancy">Engineering Consultancy</option>
                   </select>
                 </div>
+               </div>
+               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
-                    Location
+                  <label
+                    htmlFor="country"
+                    className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2"
+                  >
+                    Country
                   </label>
-                  <input
-                    type="text"
-                    placeholder="Dubai / Abu Dhabi"
-                    value={formData.location}
+
+                  <select
+                    id="country"
+                    name="country"
+                    value={formData.country}
                     onChange={(e) =>
-                      setFormData({ ...formData, location: e.target.value })
+                      setFormData({
+                        ...formData,
+                        country: e.target.value,
+                        city: "",
+                      })
                     }
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     required
-                  />
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
+                  >
+                    <option value="" disabled>
+                      Select a country
+                    </option>
+
+                    {Object.keys(countryCities).map((country) => (
+                      <option key={country} value={country}>
+                        {country}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                
+                <div>
+                  <label
+                    htmlFor="city"
+                    className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2"
+                  >
+                    City
+                  </label>
+
+                  <select
+                    id="city"
+                    name="city"
+                    value={formData.city}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        city: e.target.value,
+                      })
+                    }
+                    required
+                    disabled={!formData.country}
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground focus:outline-none focus:border-primary transition-colors disabled:opacity-50"
+                  >
+                    <option value="" disabled>
+                      {formData.country
+                        ? "Select a city"
+                        : "Select a country first"}
+                    </option>
+
+                    {(countryCities[formData.country] ?? []).map((city) => (
+                      <option key={city} value={city}>
+                        {city}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
 

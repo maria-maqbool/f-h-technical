@@ -11,8 +11,10 @@ export async function POST(request: Request) {
     const {
       fullName,
       email,
+      phone,
       serviceType,
-      location,
+      country,
+      city,
       projectBrief,
     } = body
 
@@ -20,8 +22,10 @@ export async function POST(request: Request) {
     if (
       !fullName?.trim() ||
       !email?.trim() ||
+      !phone?.trim() ||
       !serviceType?.trim() ||
-      !location?.trim() ||
+      !country?.trim() ||
+      !city?.trim() ||
       !projectBrief?.trim()
     ) {
       return NextResponse.json(
@@ -49,8 +53,10 @@ export async function POST(request: Request) {
         
         <p><strong>Name:</strong> ${fullName}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Service:</strong> ${serviceType}</p>
-        <p><strong>Location:</strong> ${location}</p>
+        <p><strong>Country:</strong> ${country}</p>
+        <p><strong>City:</strong> ${city}</p>
         <p><strong>Project Brief:</strong></p>
         <p>${projectBrief}</p>
       `,

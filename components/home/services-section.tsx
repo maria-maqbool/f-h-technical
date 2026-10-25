@@ -63,7 +63,7 @@ export function ServicesSection() {
           >
             <div className="relative aspect-[4/4] lg:aspect-auto lg:h-full min-h-[500px]">
               <Image
-                src="./services.png"
+                src="./portfolio-images/img41.jpeg"
                 alt="Villa renovation project"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

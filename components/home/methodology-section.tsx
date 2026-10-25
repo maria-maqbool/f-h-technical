@@ -54,7 +54,7 @@ export function MethodologySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+              className="group bg-[#110F0C] border-[0.1px] border-[#B8A88B] p-4 rounded-xl"
             >
               <div className="mb-4">
                 <span className="text-sm text-primary font-light">{step.number}</span>

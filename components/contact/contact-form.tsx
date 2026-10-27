@@ -12,8 +12,7 @@ const initialFormData = {
   country: "",
   city: "",
   projectBrief: "",
-}
-
+};
 
 const countryCities: Record<string, string[]> = {
   "United Arab Emirates": [
@@ -69,16 +68,13 @@ const countryCities: Record<string, string[]> = {
     "Sitra",
     "Budaiya",
   ],
-}
-
+};
 
 export function ContactForm() {
   const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
-
-
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -178,7 +174,6 @@ export function ContactForm() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-
                 <div>
                   <label
                     htmlFor="phone"
@@ -233,8 +228,8 @@ export function ContactForm() {
                     <option value="consultancy">Engineering Consultancy</option>
                   </select>
                 </div>
-               </div>
-               <div className="grid md:grid-cols-2 gap-6">
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label
                     htmlFor="country"
@@ -268,8 +263,6 @@ export function ContactForm() {
                     ))}
                   </select>
                 </div>
-
-                
                 <div>
                   <label
                     htmlFor="city"
@@ -348,52 +341,82 @@ export function ContactForm() {
               </h2>
 
               <div className="space-y-6">
+                {/* Office Address - Google Maps */}
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+
                   <div>
                     <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
                       Dubai Office
                     </p>
-                    <p className="text-muted-foreground text-sm">
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Saif+Al-Rumhib+Building%2C+Deira%2C+Dubai%2C+United+Arab+Emirates"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors underline-offset-4 hover:underline"
+                      aria-label="View Dubai office location on Google Maps"
+                    >
                       Saif Al-Rumhib Building, Deira
                       <br />
                       Dubai, United Arab Emirates
-                    </p>
+                    </a>
                   </div>
                 </div>
 
+                {/* Phone - Click to Call */}
                 <div className="flex items-start gap-4">
                   <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
                       Direct Line
                     </p>
-                    <p className="text-muted-foreground text-sm">
+                    <a
+                      href="tel:+971565302726"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                      aria-label="Call FH Technical Services"
+                    >
                       +971 56 530 2726
-                    </p>
+                    </a>
                   </div>
                 </div>
 
+                {/* Email - Open Email App */}
                 <div className="flex items-start gap-4">
                   <Mail className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
                       Enquiries
                     </p>
-                    <p className="text-muted-foreground text-sm font-medium">
+                    <a
+                      href="mailto:fhinterior7@gmail.com?subject=Service%20Enquiry"
+                      className="text-muted-foreground text-sm font-medium hover:text-primary transition-colors break-all"
+                      aria-label="Email FH Technical Services"
+                    >
                       fhinterior7@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <button className="absolute bottom-24 right-8 lg:bottom-8 lg:right-2  w-12 h-12 bg-[#C5A059] rounded-full flex items-center justify-center hover:bg-background/20 transition-colors">
+              <a
+                href="https://wa.me/971565302726?text=Hello%20FH%20Technical%20Services%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact FH Technical Services on WhatsApp"
+                className="absolute bottom-24 right-8 lg:bottom-8 lg:right-2  w-12 h-12 bg-[#C5A059] rounded-full flex items-center justify-center transition-colors"
+              >
                 <MessageSquare className="w-5 h-5 text-[#000000]" />
-              </button>
+              </a>
             </div>
 
             {/* WhatsApp Support Bar */}
-            <div className="bg-[#C5A059] p-6 flex items-center justify-between">
+            <a
+              href="https://wa.me/971565302726?text=Hello%20FH%20Technical%20Services%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact FH Technical Services on WhatsApp"
+              className="bg-[#C5A059] p-6 flex items-center justify-between group hover:bg-[#D4B475] transition-colors duration-300 cursor-pointer"
+            >
               <div>
                 <p className="text-primary-foreground font-medium">
                   WhatsApp Support
@@ -402,10 +425,10 @@ export function ContactForm() {
                   Instant technical consultation.
                 </p>
               </div>
-              <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <MessageSquare className="w-5 h-5 text-primary" />
               </div>
-            </div>
+            </a>
           </motion.div>
         </div>
       </div>

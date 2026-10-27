@@ -15,7 +15,7 @@ export function ContactHero() {
             <p className="text-primary text-xs tracking-[0.2em] uppercase mb-6">
               Connect with Excellence
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight">
+            <h1 className="font-serif text-3xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
               Architecting Precision in Every Technical Detail.
             </h1>
           </motion.div>
@@ -27,7 +27,7 @@ export function ContactHero() {
             className="lg:pl-50"
           >
             <div className="border-l-2 border-primary pl-6">
-              <p className="text-tertiary text-sm leading-relaxed">
+              <p className="text-tertiary text-xs leading-relaxed">
                 From the skyline of Dubai to the cultural heart of Abu Dhabi, we provide 
                 engineering solutions that stand the test of time.
               </p>

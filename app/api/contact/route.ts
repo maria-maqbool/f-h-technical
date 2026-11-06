@@ -44,7 +44,8 @@ export async function POST(request: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from: "FH Project Inquiry <onboarding@resend.dev>",
+      // from: "FH Project Inquiry <onboarding@resend.dev>",
+      from: "FH Project Inquiry <info@fhfitout.ae>",
       to: [process.env.CONTACT_EMAIL!],
       replyTo: email,
       subject: `New Project Inquiry - ${fullName}`,

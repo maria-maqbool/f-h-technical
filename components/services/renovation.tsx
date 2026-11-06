@@ -57,7 +57,7 @@ export function Renovation() {
                   Comprehensive structural and aesthetic overhauls, transforming legacy properties into modern masterpieces.
                 </p>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-5 py-2.5 text-xs tracking-wider border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 >
                   START YOUR PROJECT

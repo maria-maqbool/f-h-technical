@@ -57,7 +57,8 @@ export function TopBar() {
               <Youtube className="h-4 w-4" />
             </Link>
             <Link
-              href="https://www.tiktok.com/@fhtech_uae?_r=1&_t=ZS-95zywmGGfQa"
+              // href="https://www.tiktok.com/@fhtech_uae?_r=1&_t=ZS-95zywmGGfQa"
+              href="https://www.linkedin.com/in/fh-interior-13b828449/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-tertiary hover:text-primary transition-colors"

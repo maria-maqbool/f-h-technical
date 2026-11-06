@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export function PortfolioCta() {
   return (
-    <section className="bg-[#1a1a1a] py-24 px-6 lg:px-16">
+    <section className="bg-surface py-24 px-6 lg:px-16">
       <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,7 +17,7 @@ export function PortfolioCta() {
             Ready to begin your next<br />technical masterpiece?
           </h2>
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-block border border-primary text-primary px-8 py-3 text-sm tracking-wide hover:bg-primary hover:text-background transition-colors duration-300"
           >
             CONSULT OUR ENGINEERS

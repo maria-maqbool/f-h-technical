@@ -33,13 +33,13 @@ export function ServicesCTA() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center px-8 py-3.5 text-xs tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
           >
             GET A QUOTE
           </Link>
           <Link
-            href="#portfolio"
+            href="/portfolio"
             className="inline-flex items-center justify-center px-8 py-3.5 text-xs tracking-wider border border-foreground/30 text-foreground hover:bg-foreground/5 transition-all duration-300"
           >
             OUR PORTFOLIO

@@ -31,9 +31,9 @@ export function SiteHeader() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-4">
         {/* Logo */}
 
-        <Link href="/" className="flex-shrink-0 flex items-center rounded-full">
+        <Link href="/" className="flex-shrink-0 flex items-end rounded-full">
             <Image
-              src="./logo6.png"
+              src="./logo7.png"
               alt="FH Technical Services Logo"
               width={70}
               height={50}

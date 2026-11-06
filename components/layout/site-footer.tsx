@@ -40,9 +40,9 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo and copyright */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="text-lg font-serif text-primary tracking-wide flex items-center gap-2 rounded-full">
+            <Link href="/" className="text-lg font-serif text-primary tracking-wide flex items-end  gap-2 rounded-full">
             <Image
-              src="./logo6.png"
+              src="./logo7.png"
               alt="FH Technical Services Logo"
               width={50}
               height={50}
@@ -87,7 +87,8 @@ export function SiteFooter() {
               <Youtube className="h-4 w-4" />
             </Link>
             <Link
-              href="https://www.tiktok.com/@fhtech_uae?_r=1&_t=ZS-95zywmGGfQa"
+              // href="https://www.tiktok.com/@fhtech_uae?_r=1&_t=ZS-95zywmGGfQa"
+              href="https://www.linkedin.com/in/fh-interior-13b828449/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-tertiary hover:text-primary transition-colors"

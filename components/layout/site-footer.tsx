@@ -4,11 +4,11 @@ import Image from 'next/image'
 
 
 
-
 const navigationLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'ABOUT', href: '/about' },
   { name: 'SERVICES', href: '/services' },
   { name: 'PORTFOLIO', href: '/portfolio' },
-  { name: 'ABOUT', href: '/about' },
   { name: 'CONTACT', href: '/contact' },
 ]
 
@@ -26,8 +26,8 @@ const legalLinks = [
 ]
 
 const contactInfo = [
-  { icon: <MapPin />, name: 'Saif Al-Rumhib Building, Deira Dubai', href: '#' },
-  { icon: <Mail />, name: 'fhinterior7@gmail.com', href: 'mailto:fhinterior7@gmail.com' },
+  { icon: <MapPin />, name: 'Saif Al-Rumhib Building, Deira Dubai', href: 'https://www.google.com/maps/search/?api=1&query=Saif+Al-Rumhib+Building%2C+Deira%2C+Dubai%2C+United+Arab+Emirates' },
+  { icon: <Mail />, name: 'info@fhfitout.ae', href: 'mailto:info@fhfitout.ae' },
   { icon: <Phone />, name: '+971 56 530 2726', href: 'tel:+971 56 530 2726' },
   { icon: <Phone />, name: '+971 52 151 6301', href: 'tel:+971 521516301' },
   // { name: 'PRIVACY', href: '/privacy' },

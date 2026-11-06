@@ -12,11 +12,11 @@ export function TopBar() {
           {/* Left side - Contact info */}
           <div className="flex items-center gap-6">
             <a
-              href="mailto:fhinterior7@gmail.com"
+              href="mailto:info@fhfitout.ae"
               className="flex items-center gap-1 text-xs text-tertiary hover:text-primary transition-colors"
             >
               <Mail className="h-4" />
-              <span className="hidden sm:inline">fhinterior7@gmail.com</span>
+              <span className="hidden sm:inline">info@fhfitout.ae</span>
             </a>
             <a
               href="tel:+971 56 530 2726"

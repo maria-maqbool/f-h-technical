@@ -388,17 +388,17 @@ export function ContactForm() {
                       Enquiries
                     </p>
                     <a
-                      href="mailto:fhinterior7@gmail.com?subject=Service%20Enquiry"
+                      href="mailto:info@fhfitout.ae?subject=Service%20Enquiry"
                       className="text-muted-foreground text-sm font-medium hover:text-primary transition-colors break-all"
                       aria-label="Email FH Technical Services"
                     >
-                      fhinterior7@gmail.com
+                      info@fhfitout.ae
                     </a>
                   </div>
                 </div>
               </div>
 
-              <a
+              {/* <a
                 href="https://wa.me/971565302726?text=Hello%20FH%20Technical%20Services%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -406,7 +406,7 @@ export function ContactForm() {
                 className="absolute bottom-24 right-8 lg:bottom-8 lg:right-2  w-12 h-12 bg-[#C5A059] rounded-full flex items-center justify-center transition-colors"
               >
                 <MessageSquare className="w-5 h-5 text-[#000000]" />
-              </a>
+              </a> */}
             </div>
 
             {/* WhatsApp Support Bar */}
